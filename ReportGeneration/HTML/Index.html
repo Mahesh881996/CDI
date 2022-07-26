@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled 1</title>
+    <link rel="stylesheet"
+        href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Resources/HomePage/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Resources/ReportGeneration/CSS/Styles.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/jquery.dataTables.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.jqueryui.min.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css"/>
+    <link rel="stylesheet" href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Resources/HomePage/CSS/jqGridStyles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/css/bootstrap-multiselect.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/1.1.1/js/bootstrap-multiselect.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Resources/HomePage/Script/underscore-min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Resources/ReportGeneration/Script/Script.js"></script>
+<head>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:MediaServiceImageTags msdt:dt="string"></mso:MediaServiceImageTags>
+<mso:lcf76f155ced4ddcb4097134ff3c332f msdt:dt="string"></mso:lcf76f155ced4ddcb4097134ff3c332f>
+<mso:TaxCatchAll msdt:dt="string"></mso:TaxCatchAll>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+
+<body>
+    <div class="loader"></div>
+    <section id="Header">
+        <div class="navigation-wrap bg-light start-header start-style">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-5">
+                        <a class="navbar-brand" style="display:flex;font-size: 20px;font-weight: 700;" href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/SitePages/Welcome.aspx"><img src="https://www.dovercorporation.com/images/default-source/template-graphics/logo-dover_main.png" style="margin-left:5%;" alt="">Critical Data Inventory</a>
+                    </div>
+                    <div class="col-md-6" style="text-align:left;">
+                        <h3>Generate Report</h3>
+                    </div>
+                    <div class="col-md-1">
+                        <a href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/SitePages/Welcome.aspx"><i class="fas fa-home"></i></a>                           
+                    </div>		
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section style="margin-top:100px;">
+        <div class="row" style="margin-bottom:1%;">
+            <div class="col-md-12" style="display: contents;">
+                <select id="OpCoSelect" multiple="multiple" dataItem="OperatingCompany"></select>
+                <select id="SubOpCoSelect" multiple="multiple" dataItem="SubOperatingCompany"></select>
+                <select id="LocationSelect" multiple="multiple" dataItem="Location"></select>
+                <select id="StateSelect" multiple="multiple" dataItem="State"></select>
+                <select id="CountrySelect" multiple="multiple" dataItem="Country"></select>
+                <select id="BFSelect" multiple="multiple" dataItem="BusinessFunction"></select>
+                <select id="POSelect" multiple="multiple" dataItem="ProcessOwnerEMail"></select>
+                <select id="PDSelect" multiple="multiple" dataItem="PersonalData"></select>
+                <img style="width:23px;cursor: pointer;" id="filterIcon" onclick="View_CDI.fn.clearFilters()" src="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Resources/Images(1)/icons8-filter.gif"/>
+               <button style="position: absolute;right: 21px;"><a href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/Lists/Bulk%20Requests/NewForm.aspx?Source=https%3A%2F%2Fdover%2Esharepoint%2Ecom%2Fsites%2FCriticalDataInventory%2DCDICSFProject&ContentTypeId=0x01008D5AD0E7622CD744AFE1792D435A6BE5008C64128F7C6F34478BC75272A5476BCA&RootFolder=%2Fsites%2FCriticalDataInventory%2DCDICSFProject%2FLists%2FBulk%20Requests">Bulk Requst</a></button> 
+                <button style="position: absolute;    right: 9em;"><a href="https://dover.sharepoint.com/sites/CriticalDataInventory-CDICSFProject/SitePages/AdminShare.aspx">Admin Dashboard</a></button> 
+            </div>
+        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table id="yourCDI" class="table table-striped table-bordered display nowrap" cellspacing="0" width="100%">
+                    </table>
+                </div>
+            </div>
+    </section>
+
+</body>
